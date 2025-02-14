@@ -9,7 +9,7 @@ export default function App() {
     const [matchedCards, setMatchedCards] = useState([]);
     const [isGameOver, setIsGameOver] = useState(false);
 
-    console.log(selectedCards);
+    console.log(isGameOver);
 
     useEffect(() => {
         if (
@@ -107,7 +107,12 @@ export default function App() {
             <h1>Memory</h1>
             {!isGameOn && <Form handleSubmit={startGame} />}
             {isGameOn && (
-                <MemoryCard handleClick={turnCard} data={emojisData} />
+                <MemoryCard
+                    handleClick={turnCard}
+                    data={emojisData}
+                    selectedCards={selectedCards}
+                    matchedCards={matchedCards}
+                />
             )}
         </main>
     );
