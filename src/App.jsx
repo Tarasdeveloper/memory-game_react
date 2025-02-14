@@ -8,7 +8,6 @@ export default function App() {
     const [selectedCards, setSelectedCards] = useState([]);
     const [matchedCards, setMatchedCards] = useState([]);
     const [isGameOver, setIsGameOver] = useState(false);
-
     console.log(isGameOver);
 
     useEffect(() => {
@@ -53,10 +52,6 @@ export default function App() {
         const randomIndices = getRandomIndices(data);
 
         const dataSlice = randomIndices.map((index) => data[index]);
-        // const dataSlice = randomIndices.reduce((array, index) => {
-        //     array.push(data[index]);
-        //     return array;
-        // }, []);
 
         return dataSlice;
     }
@@ -88,16 +83,13 @@ export default function App() {
     }
 
     function turnCard(name, index) {
-        const selectedCardEntry = selectedCards.find(
-            (emoji) => emoji.index === index
-        );
-
-        if (!selectedCardEntry && selectedCards.length < 2) {
+        console.log('clicked');
+        if (selectedCards.length < 2) {
             setSelectedCards((prevSelectedCards) => [
                 ...prevSelectedCards,
                 { name, index },
             ]);
-        } else if (!selectedCardEntry && selectedCards.length === 2) {
+        } else if (selectedCards.length === 2) {
             setSelectedCards([{ name, index }]);
         }
     }
