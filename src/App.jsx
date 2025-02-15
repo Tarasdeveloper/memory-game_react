@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import Form from './components/Form';
 import MemoryCard from './components/MemoryCard';
+import AssistiveTechInfo from './components/AssistiveTechInfo';
+import GameOver from './components/GameOver';
 
 export default function App() {
     const [isGameOn, setIsGameOn] = useState(false);
     const [emojisData, setEmojisData] = useState([]);
     const [selectedCards, setSelectedCards] = useState([]);
     const [matchedCards, setMatchedCards] = useState([]);
-    const [isGameOver, setIsGameOver] = useState(false);
-    console.log(isGameOver);
+    const [areAllCardsMatched, setAreAllCardsMatched] = useState(false);
 
     useEffect(() => {
         if (
@@ -24,7 +25,7 @@ export default function App() {
 
     useEffect(() => {
         if (emojisData.length && matchedCards.length === emojisData.length) {
-            setIsGameOver(true);
+            setAreAllCardsMatched(true);
         }
     }, [matchedCards, emojisData]);
 
@@ -83,7 +84,6 @@ export default function App() {
     }
 
     function turnCard(name, index) {
-        console.log('clicked');
         if (selectedCards.length < 2) {
             setSelectedCards((prevSelectedCards) => [
                 ...prevSelectedCards,
@@ -94,10 +94,23 @@ export default function App() {
         }
     }
 
+    function resetGame() {
+        setIsGameOn(false);
+        setSelectedCards([]);
+        setMatchedCards([]);
+        setAreAllCardsMatched(false);
+    }
+
     return (
         <main>
             <h1>Memory</h1>
             {!isGameOn && <Form handleSubmit={startGame} />}
+            {isGameOn && !areAllCardsMatched && (
+                <AssistiveTechInfo
+                    emojisData={emojisData}
+                    matchedCards={matchedCards}
+                />
+            )}
             {isGameOn && (
                 <MemoryCard
                     handleClick={turnCard}
@@ -106,6 +119,7 @@ export default function App() {
                     matchedCards={matchedCards}
                 />
             )}
+            {areAllCardsMatched && <GameOver handleClick={resetGame} />}
         </main>
     );
 }
