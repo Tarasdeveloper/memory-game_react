@@ -36,11 +36,15 @@ export default function App() {
     }
   }, [matchedCards, emojisData]);
 
+  function handleFormChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(name, value);
+  }
+
   async function startGame(e) {
     e.preventDefault();
     try {
-      //   throw new Error("I am now throwing a brand new error.");
-
       const response = await fetch(
         `https://emojihub.yurace.pro/api/all/category/${formData.category}`
       );
@@ -118,7 +122,9 @@ export default function App() {
   return (
     <main>
       <h1>Memory</h1>
-      {!isGameOn && !isError && <Form handleSubmit={startGame} />}
+      {!isGameOn && !isError && (
+        <Form handleChange={handleFormChange} handleSubmit={startGame} />
+      )}
       {isGameOn && !areAllCardsMatched && (
         <AssistiveTechInfo
           emojisData={emojisData}
