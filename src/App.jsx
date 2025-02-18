@@ -39,7 +39,7 @@ export default function App() {
   function handleFormChange(e) {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   }
 
   async function startGame(e) {
