@@ -127,7 +127,7 @@ export default function App() {
   return (
     <main>
       {areAllCardsMatched && <ReactConfetti />}
-      <h1>Memory</h1>
+      <h1>Memory game</h1>
       {!isGameOn && !isError && (
         <Form
           isFirstRender={isFirstRender}
