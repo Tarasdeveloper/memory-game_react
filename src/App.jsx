@@ -4,6 +4,7 @@ import MemoryCard from "./components/MemoryCard";
 import AssistiveTechInfo from "./components/AssistiveTechInfo";
 import GameOver from "./components/GameOver";
 import ErrorCard from "./components/ErrorCard";
+import ReactConfetti from "react-confetti";
 
 export default function App() {
   const initialFormData = {
@@ -125,6 +126,7 @@ export default function App() {
 
   return (
     <main>
+      {areAllCardsMatched && <ReactConfetti />}
       <h1>Memory</h1>
       {!isGameOn && !isError && (
         <Form

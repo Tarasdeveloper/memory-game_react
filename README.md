@@ -1,3 +1,4 @@
-# React + Vite
+#Memory-game:
+Find and flip all pairs of cards on the table to win the game.
 
-This template provides a setup to get React working in Vite with HMR and some ESLint rules.
+The game is built using React, Vite, css, react-confetti, html-entities, emojihub-api

@@ -1,52 +1,52 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 :root {
-    --dark-primary: #082f49;
-    --light-primary: #f0f9ff;
-    --light-secondary: #cbd5e1;
-    --accent: #fde68a;
-    --btn-disabled: #a8a29e;
+  --dark-primary: #082f49;
+  --light-primary: #f0f9ff;
+  --light-secondary: #cbd5e1;
+  --accent: #fde68a;
+  --btn-disabled: #a8a29e;
 }
 
 /*===========================
 Layout
 ============================*/
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--dark-primary);
-    color: var(--light-primary);
-    text-align: center;
-    /* min-height: 100vh; */
+  font-family: "Inter", sans-serif;
+  background: var(--dark-primary);
+  color: var(--light-primary);
+  text-align: center;
+  /* min-height: 100vh; */
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
-    height: 100%;
-    padding: 2em;
-    max-width: 880px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  height: 100%;
+  padding: 2em;
+  max-width: 880px;
+  margin: 0 auto;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    background-color: var(--light-secondary);
-    color: var(--dark-primary);
-    border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  background-color: var(--light-secondary);
+  color: var(--dark-primary);
+  border-radius: 0.5em;
 }
 
 .wrapper--accent {
-    padding: 2em 3em;
-    border: 1px solid var(--dark-primary);
-    box-shadow: 0 0 5px 2px var(--light-primary);
+  padding: 2em 3em;
+  border: 1px solid var(--dark-primary);
+  box-shadow: 0 0 5px 2px var(--light-primary);
 }
 
 /*===========================
@@ -54,54 +54,55 @@ Typography
 ============================*/
 
 h1 {
-    color: var(--accent);
-    font-size: 2.25rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
+  color: var(--accent);
+  font-size: 2.25rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .p--large {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .p--regular {
-    font-size: 1.125em;
+  font-size: 1.125em;
 }
 
 /*===========================
 Buttons
 ============================*/
 .btn {
-    background-color: var(--light-primary);
-    color: var(--dark-primary);
-    font-family: inherit;
-    border: 2px solid var(--dark-primary);
-    border-radius: 0.5em;
-    cursor: pointer;
+  background-color: var(--light-primary);
+  color: var(--dark-primary);
+  font-family: inherit;
+  border: 2px solid var(--dark-primary);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: color 0.3s linear, background-color 0.3s linear;
 }
 
 .btn--text {
-    background-color: var(--dark-primary);
-    color: var(--light-primary);
-    font-size: 1.25rem;
-    width: max-content;
-    margin: 0 auto;
-    padding: 0.25em 0.75em;
+  background-color: var(--dark-primary);
+  color: var(--light-primary);
+  font-size: 1.5rem;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.5em 1em;
 }
 
 .btn--emoji {
-    width: 100%;
-    height: 100px;
-    font-size: 3rem;
-    border: 2px solid var(--light-primary);
+  width: 100%;
+  height: 100px;
+  font-size: 3rem;
+  border: 2px solid var(--light-primary);
 }
 
 .btn--text:hover,
 .btn--text:focus {
-    background-color: var(--light-primary);
-    color: var(--dark-primary);
-    box-shadow: 0 0 5px 1px var(--dark-primary);
+  background-color: var(--light-primary);
+  color: var(--dark-primary);
+  box-shadow: 0 0 5px 1px var(--dark-primary);
 }
 
 /*===========================
@@ -109,55 +110,62 @@ Form
 ============================*/
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  text-align: start;
 }
 
 form {
-    gap: 2em;
-    font-size: 1.125rem;
-    padding: 1em;
-    border-radius: 0.5em;
+  gap: 2em;
+  font-size: 1.125rem;
+  padding: 1em;
+  border-radius: 0.5em;
 }
 
 .form__inner-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+label {
+  font-size: 1em;
+  font-weight: 500;
 }
 
 select {
-    background-color: var(--dark-primary);
-    color: var(--light-primary);
-    font-family: inherit;
-    padding: 0.5em;
-    border: 1px solid var(--dark-primary);
-    border-radius: 0.5em;
-    cursor: pointer;
+  background-color: var(--dark-primary);
+  color: var(--light-primary);
+  font-family: inherit;
+  padding: 1em;
+  border: 1px solid var(--dark-primary);
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 select:hover,
 select:focus {
-    background-color: var(--light-primary);
-    color: var(--dark-primary);
-    box-shadow: 0 0 2px 1px var(--dark-primary);
+  background-color: var(--light-primary);
+  color: var(--dark-primary);
+  box-shadow: 0 0 2px 1px var(--dark-primary);
 }
 
 /*===========================
 Game
 ============================*/
 .card-container {
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1em;
-    width: 100%;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1em;
+  width: 100%;
 }
 
 .card-item {
-    list-style: none;
+  list-style: none;
 }
 
 /* Animated memory card */
@@ -165,85 +173,85 @@ Game
 .card-item--matched,
 .btn--emoji__back--selected,
 .btn--emoji__back--matched {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-item--selected {
-    transition: 0.6s;
-    transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
 }
 
 .btn--emoji__front,
 .btn--emoji__back--selected {
-    backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .btn--emoji__back--matched {
-    backface-visibility: unset;
-    background-color: var(--btn-disabled);
-    border: 2px solid var(--btn-disabled);
-    cursor: not-allowed;
+  backface-visibility: unset;
+  background-color: var(--btn-disabled);
+  border: 2px solid var(--btn-disabled);
+  cursor: not-allowed;
 }
 
 .btn--emoji__front:hover,
 .btn--emoji__front:focus {
-    background-color: var(--accent);
-    border: 2px solid var(--dark-primary);
-    box-shadow: 0 0 5px 2px var(--light-primary);
-    cursor: pointer;
+  background-color: var(--accent);
+  border: 2px solid var(--dark-primary);
+  box-shadow: 0 0 5px 2px var(--light-primary);
+  cursor: pointer;
 }
 
 .card-item--selected .btn--emoji__back--selected {
-    border: 2px solid var(--dark-primary);
-    box-shadow: 0 0 5px 2px var(--light-primary);
+  border: 2px solid var(--dark-primary);
+  box-shadow: 0 0 5px 2px var(--light-primary);
 }
 
 /*===========================
 Screen reader only
 ============================*/
 .sr-only {
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
-    height: 1px !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-    white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 
 /*===========================
 Media queries
 ============================*/
 @media (min-width: 768px) {
-    h1 {
-        font-size: 2.75rem;
-    }
+  h1 {
+    font-size: 2.75rem;
+  }
 
-    .btn--emoji {
-        font-size: 4rem;
-        height: 110px;
-    }
+  .btn--emoji {
+    font-size: 4rem;
+    height: 110px;
+  }
 
-    .card-container {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    }
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {
-    h1 {
-        font-size: 3.25rem;
-    }
+  h1 {
+    font-size: 3.25rem;
+  }
 
-    .btn--emoji {
-        font-size: 4.5rem;
-        height: 125px;
-    }
+  .btn--emoji {
+    font-size: 4.5rem;
+    height: 125px;
+  }
 
-    .card-container {
-        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-    }
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
 }
